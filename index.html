@@ -12,7 +12,7 @@ title: Jaybee | Portfolio
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/css/styles.css">
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.10"></script>
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <link rel="icon" href="./assets/img/icon.png">
 
 
 
@@ -20,6 +20,20 @@ title: Jaybee | Portfolio
 </head>
 
 <body>
+
+
+    <section class="zoom">
+        <img src="./assets/img/mountain1.png" id="layer1">
+        <img src="./assets/img/mountain2.png" id="layer2">
+        <div id="text">
+            <div class="text">Hello, I am
+            <span style="color: yellow;">Okoroji Faith</span> 
+        </div>
+            <div class="button">Discover Me</div>
+        </div>
+    </section>
+
+
     <section class="header-section section-one" id="section-one">
 
         <div class="header">
@@ -27,9 +41,9 @@ title: Jaybee | Portfolio
                 <canvas id="canvas-one"></canvas>
                 <canvas id="canvas-two"></canvas>
                 <div class="main-title header-text" id="header-text">
-                    <h1>Hi, I am Jaybee <br>
+                    <h1> I am a <br>
                         {<span class="typed" style="color: yellow;"></span>}</h1>
-                    
+
                 </div>
             </div>
         </div>
@@ -39,21 +53,18 @@ title: Jaybee | Portfolio
     </section>
 
 
-    <section class="section-two">
-
-        <canvas id="c"></canvas>
-
-    </section>
 
 
     <section id="section-three">
     </section>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/skrollr/0.6.30/skrollr.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
     <script src="./assets/js/tweenlite.js"></script>
     <script src="./assets/js/Easepack.min.js"></script>
     <script src="./assets/js/demo.js"></script>
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
 
 
 
@@ -69,10 +80,10 @@ title: Jaybee | Portfolio
 
         var typed = new Typed('.typed', {
             strings: [
-                "I Am A Developer",
-                "I Code",
-                "I Create",
-                "I Design"
+                "web Developer",
+                "Designer",
+                "Creativity Activisit",
+            
             ],
             startDelay: 100,
             typeSpeed: 200,
@@ -83,121 +94,6 @@ title: Jaybee | Portfolio
             loopCount: Infinity
         })
 
-
-
-        particlesJS("", {
-            "particles": {
-                "number": {
-                    "value": 380,
-                    "density": {
-                        "enable": true,
-                        "value_area": 800
-                    }
-                },
-                "color": {
-                    "value": "#ffffff"
-                },
-                "shape": {
-                    "type": "circle",
-                    "stroke": {
-                        "width": 0,
-                        "color": "#000000"
-                    },
-                    "polygon": {
-                        "nb_sides": 5
-                    },
-                    "image": {
-                        "src": "img/github.svg",
-                        "width": 100,
-                        "height": 100
-                    }
-                },
-                "opacity": {
-                    "value": 0.5,
-                    "random": false,
-                    "anim": {
-                        "enable": false,
-                        "speed": 1,
-                        "opacity_min": 0.1,
-                        "sync": false
-                    }
-                },
-                "size": {
-                    "value": 3,
-                    "random": true,
-                    "anim": {
-                        "enable": false,
-                        "speed": 40,
-                        "size_min": 0.1,
-                        "sync": false
-                    }
-                },
-                "line_linked": {
-                    "enable": true,
-                    "distance": 150,
-                    "color": "#ffffff",
-                    "opacity": 0.4,
-                    "width": 1
-                },
-                "move": {
-                    "enable": true,
-                    "speed": 6,
-                    "direction": "none",
-                    "random": false,
-                    "straight": false,
-                    "out_mode": "out",
-                    "bounce": false,
-                    "attract": {
-                        "enable": false,
-                        "rotateX": 600,
-                        "rotateY": 1200
-                    }
-                }
-            },
-            "interactivity": {
-                "detect_on": "canvas",
-                "events": {
-                    "onhover": {
-                        "enable": true,
-                        "mode": "grab"
-                    },
-                    "onclick": {
-                        "enable": true,
-                        "mode": "push"
-                    },
-                    "resize": true
-                },
-                "modes": {
-                    "grab": {
-                        "distance": 140,
-                        "line_linked": {
-                            "opacity": 1
-                        }
-                    },
-                    "bubble": {
-                        "distance": 400,
-                        "size": 40,
-                        "duration": 2,
-                        "opacity": 8,
-                        "speed": 3
-                    },
-                    "repulse": {
-                        "distance": 200,
-                        "duration": 0.4
-                    },
-                    "push": {
-                        "particles_nb": 4
-                    },
-                    "remove": {
-                        "particles_nb": 2
-                    }
-                }
-            },
-            "retina_detect": true
-        });
-
-
-        /* ---- stats.js config ---- */
 
     </script>
 
