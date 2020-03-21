@@ -67,5 +67,5 @@ body {
 .canvas-two{
    z-index: 10000;
    position: absolute;
-   top: 0;
+   top: 0em;
 }
