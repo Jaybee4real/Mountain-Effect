@@ -21,7 +21,7 @@
         background.src = "./assets/img/background.jpg";
 
 
-        canvas = document.getElementById('demo-canvas');
+        canvas = document.getElementById('canvas-one');
         canvas.width = width;
         canvas.height = height;
         ctx = canvas.getContext('2d');
@@ -203,14 +203,14 @@
 /////////////////////////////////////////////////
 
 var w = c.width = window.innerWidth,
-    h = c.height = window.innerHeight *2,
+    h = c.height = window.innerHeight,
     ctx = c.getContext('2d'),
 
     minDist = 30,
     maxDist = 400,
-    initialWidth = 5,
-    maxLines = 500,
-    initialLines = 10,
+    initialWidth = 4,
+    maxLines = 15,
+    initialLines = 4,
     speed = 4,
 
     lines = [],
@@ -343,6 +343,7 @@ Line.prototype.step = function () {
 
         // kill the poor thing
         if (Math.random() < .2) dead = true;
+        if (lines.length > maxLines) lines.pop(lines.length/2)
     }
 
     ctx.strokeStyle = ctx.shadowColor = getColor(this.x);
@@ -369,3 +370,20 @@ window.addEventListener('resize', function () {
 })
 
 
+
+
+
+////////////////////Conrol Navigation////////////////
+window.addEventListener('scroll', function() {
+    document.getElementById('show-scroll').innerHTML = window.pageYOffset + 'px';
+    if(this.window.pageYOffset > 0){
+        navigateDown()
+    }
+
+  });
+
+
+
+  function navigateDown(){
+    
+  }

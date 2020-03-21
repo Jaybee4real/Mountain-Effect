@@ -24,14 +24,13 @@ title: Jaybee | Portfolio
 
         <div class="header">
             <div id="large-header" class="large-header">
-                <canvas id="demo-canvas"></canvas>
-<<<<<<< HEAD
-=======
+                <canvas id="canvas-one"></canvas>
                 <canvas id="canvas-two"></canvas>
->>>>>>> _added typing effect, laser effect and background-animation
-                <h1 class="main-title header-text" id="header-text">Hi, I am Jaybee
-                    {<div class="typed" style="color: yellow"> </div>}
-                </h1>
+                <div class="main-title header-text" id="header-text">
+                    <h1>Hi, I am Jaybee <br>
+                        {<span class="typed" style="color: yellow;"></span>}</h1>
+                    
+                </div>
             </div>
         </div>
 
@@ -48,7 +47,6 @@ title: Jaybee | Portfolio
 
 
     <section id="section-three">
-
     </section>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -71,8 +69,8 @@ title: Jaybee | Portfolio
 
         var typed = new Typed('.typed', {
             strings: [
-                "I Code",
                 "I Am A Developer",
+                "I Code",
                 "I Create",
                 "I Design"
             ],
@@ -87,7 +85,7 @@ title: Jaybee | Portfolio
 
 
 
-        particlesJS("canvas-two", {
+        particlesJS("", {
             "particles": {
                 "number": {
                     "value": 380,

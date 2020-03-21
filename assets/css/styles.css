@@ -17,8 +17,7 @@
    animation: gradient 20s ease infinite;
   background-blend-mode: multiply;
   background-repeat: no-repeat;
-  background-size: 400% 400%;
-  animation: gradient 20s ease infinite;
+
 
 
 }
@@ -29,16 +28,25 @@
   padding: 0;
   color: #f9f1e9;
   text-align: left;
-  top: 70%;
+  top: 50%;
   left: 5%;
   font-family: "Roboto Mono", sans-serif;
   font-size: 2rem;
   display: flex;
   opacity: 1;
-  flex-direction: row;
+  flex-direction: column;
 }
 
+@media(max-width: 460px){
+   .main-title{
+      font-size: 1.2rem;
+   }
+}
 
+.main-title .typed-container{
+   display: flex;
+   flex-direction: row;
+}
 
 body {
   margin: 0;
@@ -50,6 +58,8 @@ body {
    background: linear-gradient(-45deg, #52eeb2, #63645c, #0c465c, #23d5ab);
   background-size: 400% 400%;
   animation: gradient 20s ease infinite;
+  background-blend-mode: multiply;
+  background-repeat: no-repeat;
 }
 
 @keyframes gradient {
@@ -64,8 +74,12 @@ body {
   }
 }
 
-.canvas-two{
-   z-index: 10000;
-   position: absolute;
-   top: 0em;
+#show-scroll{
+   background-color: white;
+   color: black;
+   position: fixed;
+   top: 5rem;
+   left: 0;
+   height: 5rem;
+
 }
