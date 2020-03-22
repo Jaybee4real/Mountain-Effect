@@ -235,10 +235,16 @@
       text.style.opacity = .1 + scroll/100;
       zoom.style.backgroundColor = "grey";
       intro.style.opacity = 0;
+      intro.classList.add("rotate")
       }
       else{
         zoom.style.backgroundColor = "transparent";
         text.style.opacity = .1;
+        intro.classList.remove("rotate")
         intro.style.opacity = 1;
+
       }
   })
+
+  //////////////////////ScrollMagic Animations//////////////////
+
