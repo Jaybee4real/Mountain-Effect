@@ -45,7 +45,7 @@
   margin: 0;
   color: #f9f1e9;
   text-align: left;
-  top: 36%;
+  top: 40%;
   font-family: "Roboto Mono", sans-serif;
   font-size: 1rem;
   display: flex;
@@ -58,9 +58,13 @@
 @media(min-width: 667px){
    .subtitle{
       max-width: 40vw;
-      top: 9% !important;
-      right: 0
+      top: 7% !important;
+      right: 0;
      
+   }
+
+   .type3{
+      margin-bottom: 10rem !important;
    }
 
    .subtitle  h1{
@@ -163,7 +167,7 @@ body {
   font-family: "Lobster", cursive;
 }
 
-.zoom #text .button {
+ .button {
   background: linear-gradient(-45deg, #c9ca9e, #a7aa90, #70bfdf, #74f7d8);
   box-shadow: 1px 1px 10px 5px rgba(0, 0, 0, 0.123);
   font-size: 1.8rem;
@@ -193,7 +197,7 @@ body {
   color: white;
   font-family: "Flavors", cursive;
   z-index: 100;
-  transition: 1s ease-out;
+  transition: .5s ease-out;
   font-weight: 700;
 }
 
@@ -303,11 +307,35 @@ $s3: "";
   animation-delay: -8.5s;
 }
 
+.see-btn{
+  background: linear-gradient(-45deg, #c9ca9e, #a7aa90, #70bfdf, #74f7d8);
+  box-shadow: 1px 1px 10px 5px rgba(0, 0, 0, 0.123);
+  position: relative;
+  font-size: 1.2rem;
+  top: -2rem;
+  word-break: keep-all;
+  left: 5%;
+  border-radius: 20px;
+  padding: 10px;
+  margin-bottom: 1rem;
+  margin-left: 5%;
+  width: fit-content;
+  width: -moz-fit-content;
+  min-width: 7rem;
+  text-align: center;
+  font-family: "Lobster", cursive;
+  border: none;
+  animation: gradient 20s ease infinite;
+  background-size: 400% 400%;
+}
+
 @keyframes fall {
   100% {
     transform: translateY(350vh);
   }
 }
+
+
 
 
 //////////////////////Navbar//////////////
@@ -320,14 +348,14 @@ $s3: "";
    padding: 1.3rem;
    position: absolute;
    color: white;
-   background: linear-gradient(-45deg, #c9ca9e, #a7aa90, #70bfdf, #74f7d8);
+   animation: 15s gradient ease-out;
+   background: linear-gradient(-45deg, #d9dac3, #abbaab, #ced9dd, #9ea096);
+   background-size: 400% 400%;
+   animation: gradient 20s ease infinite;
+   box-shadow: 1px 1px 15px 2px grey;
+   filter: invert(5%);
 
 
-   .navbar-brand{
-      position: relative;
-      left: 10vw !important;
-      color: black
-   }
 
 //    display: flex;
 //    flex-direction: row;
@@ -343,4 +371,50 @@ $s3: "";
    background-size: contain;
    background-position: center;
 }
+
+
+
+}
+.section-two{
+  height: fit-content !important;
+}
+.navbar .navbar-brand{
+   left: 10rem !important;
+   color: black;
+   background-color: yellow !important;
+}
+
+
+#section-three, #section-four,#section-five{
+   height: 100vh !important;
+   width: 100vw !important;
+   display: flex;
+   justify-content: center;
+   background-attachment: fixed;
+   background-color: yellow;
+
+}
+#section-four{
+   background-color: green;
+
+}
+
+#section-five{
+   background-color:blue;
+}
+
+
+
+/////////////////////////////////////////////////////////////////////////
+
+
+///////////////////////////////Media Querries/////////////////////////
+@media (max-width: 460px){
+  .snow{
+     animation: none !important;
+  }
+
+  .see-btn{
+    top: 0
+  }
 }
