@@ -105,7 +105,7 @@
 //         largeHeader.style.height = height + 'px';
 //         canvas.width = width;
 //         canvas.height = height;
-      
+
 //     }
 
 //     // animation
@@ -201,258 +201,170 @@
 /////////////////////////////////////////////////
 
 
-
 ////////////////////Conrol Navigation////////////////
 
-  var layer1 = document.getElementById('layer1')
-  scroll = window.pageYOffset;
-  document.addEventListener("scroll", function(e){
-      var offset = window.pageYOffset;
-      scroll = offset;
+var layer1 = document.getElementById('layer1')
+scroll = window.pageYOffset;
+document.addEventListener("scroll", function (e) {
+	var offset = window.pageYOffset;
+	scroll = offset;
       layer1.style.width = (90 + scroll/3 ) + "%"
   })
 
-    var layer2 = document.getElementById('layer2')
-  scroll = window.pageYOffset;
-  document.addEventListener("scroll", function(e){
-      var offset = window.pageYOffset;
-      scroll = offset;
+var layer2 = document.getElementById('layer2')
+scroll = window.pageYOffset;
+document.addEventListener("scroll", function (e) {
+	var offset = window.pageYOffset;
+	scroll = offset;
       layer2.style.width = (90 + scroll/3 ) + "%"
       layer2.style.left =  scroll/50 + "%"
       layer2.style.transform = "translateX(10%)"
   })
 
-  var text = document.getElementById('text')
-  var zoom = document.querySelector(".zoom")
-  var intro = document.querySelector(".intro-text")
-  scroll = window.pageYOffset;
-  document.addEventListener("scroll", function(e){
-      var offset = window.pageYOffset;
-      scroll = offset;
 
-      if(scroll > 20){
-      text.style.bottom = scroll/6 + "%";
-      if(scroll > 200){
-          text.style.bottom = "18%";
-      }
-      text.style.opacity = .1 + scroll/100;
-      zoom.style.backgroundColor = "grey";
-      intro.style.opacity = 0;
-      }
-      else{
 
-        zoom.style.backgroundColor = "transparent";
-        text.style.opacity = .1;
-        intro.style.opacity = 1;
 
-      }
-  })
 
-  //////////////////////ScrollMagic Animations//////////////////
 
-  /*! viewportSize | Author: Tyson Matanich, 2013 | License: MIT */
-(function (n) { n.viewportSize = {}, n.viewportSize.getHeight = function () { return t("Height") }, n.viewportSize.getWidth = function () { return t("Width") }; var t = function (t) { var f, o = t.toLowerCase(), e = n.document, i = e.documentElement, r, u; return n["inner" + t] === undefined ? f = i["client" + t] : n["inner" + t] != i["client" + t] ? (r = e.createElement("body"), r.id = "vpw-test-b", r.style.cssText = "overflow:scroll", u = e.createElement("div"), u.id = "vpw-test-d", u.style.cssText = "position:absolute;top:-1000px", u.innerHTML = "<style>@media(" + o + ":" + i["client" + t] + "px){body#vpw-test-b div#vpw-test-d{" + o + ":7px!important}}<\/style>", r.appendChild(u), i.insertBefore(r, e.head), f = u["offset" + t] == 7 ? i["client" + t] : n["inner" + t], i.removeChild(r)) : f = n["inner" + t], f } })(this);
+//////////////////////For Header Text
 
-/**
-* This demo was prepared for you by Petr Tichy - Ihatetomatoes.net
-* Want to see more similar demos and tutorials?
-* Help by spreading the word about Ihatetomatoes blog.
-* Facebook - https://www.facebook.com/ihatetomatoesblog
-* Twitter - https://twitter.com/ihatetomatoes
-* Google+ - https://plus.google.com/u/0/109859280204979591787/about
-* Article URL: http://ihatetomatoes.net/how-to-create-a-parallax-scrolling-website-part-2/
-*/
+var text = document.getElementById('text')
+var zoom = document.querySelector(".zoom")
+var intro = document.querySelector(".intro-text")
 
-(function ($) {
 
-	// Setup variables
-	$window = $(window);
-	$slide = $('.homeSlide');
-	$slideTall = $('.homeSlideTall');
-	$slideTall2 = $('.homeSlideTall2');
-	$body = $('body');
-	htmlbody = $('html,body');
-	var duration = 500;
 
-	//FadeIn all sections   
-	$body.imagesLoaded(function () {
-		setTimeout(function () {
+scroll = window.pageYOffset;
+document.addEventListener("scroll", function (e) {
+	var offset = window.pageYOffset;
+	scroll = offset;
 
-			// Resize sections
-			adjustWindow();
-
-			// Init navigation
-			initHomepageNav();
-
-			// Fade in sections
-			$body.removeClass('loading').addClass('loaded');
-
-		}, 800);
-	});
-
-	function adjustWindow() {
-
-		// Init Skrollr
-		var s = skrollr.init({
-			forceHeight: false,
-			render: function (data) {
-
-				//Debugging - Log the current scroll position.
-				//console.log(data.curTop);
-			}
-		});
-
-		// Get window size
-		winH = $window.height();
-
-		// Keep minimum height 550
-		if (winH <= 550) {
-			winH = 550;
+	if (scroll > 20) {
+		text.style.bottom = scroll / 6 + "%";
+		if (scroll > 200) {
+			text.style.bottom = "15%";
 		}
+		text.style.opacity = .1 + scroll / 100;
+		zoom.style.backgroundColor = "grey";
+		intro.style.opacity = 0;
+	}
+	else {
 
-		// Resize our slides
-		$slide.height(winH);
-		$slideTall.height(winH * 2);
-		$slideTall2.height(winH * 3);
-
-		// Refresh Skrollr after resizing our sections
-		s.refresh($('.homeSlide'));
+		zoom.style.backgroundColor = "transparent";
+		text.style.opacity = .1;
+		intro.style.opacity = 1;
 
 	}
-
-	function initHomepageNav() {
-
-		var homeSlides = $('.homeSlide');
-		var $slideContent = $('.hsContainer');
-		var slidesCount = $(homeSlides).length;
-		var activeSlide = 1;
-
-		// Build HTML for Nav
-		$('<div/>', {
-			'id': 'slideNav'
-		}).append($('<ul><li class="slideNavPrev"><a class="disabled" href="#" title="Go to previous slide"><span class="ico ico-up">↑</span></a></li><li><span id="activeSlide">' + activeSlide + '</span>/<span id="maxSlides">' + slidesCount + '</span></li><li class="slideNavNext"><a href="#" title="Go to next slide"><span class="ico ico-down">↓</span></a></li></ul>')).appendTo('body').delay(1200).fadeIn(duration);
+})
 
 
-		// Navigation highligting
-		var $activeSlide = $('#activeSlide');
-		var $maxSlides = $('#maxSlides');
-		var $numberOfSlides = parseInt($maxSlides.text());
-		var slideNavPrev = $('');
-		var $slideNavNext = $('.slideNavNext');
-		var $slideNavPrev = $('.slideNavPrev');
-		var $slideNavNextA = $('.slideNavNext a');
-		var $slideNavPrevA = $('.slideNavPrev a');
-
-		// Highlight the section currently scrolling DOWN
-		homeSlides.waypoint(function (direction) {
-			if (direction === 'down') {
-				var index = $(this).index();
-				var index = index + 1;
-				$activeSlide.text(index);
-				showHideNavItems();
-			}
-		}, { offset: '50%' });
-
-		// Highlight the section currently scrolling UP
-		homeSlides.waypoint(function (direction) {
-			if (direction === 'up') {
-				var index = $(this).index();
-				var index = index + 1;
-				$activeSlide.text(index);
-				showHideNavItems();
-			}
-		}, {
-			offset: function () {
-				// This is the calculation that would give you
-				// "bottom of element hits middle of window"
-				return $.waypoints('viewportHeight') / 2 - $(this).outerHeight();
-			}
-		});
-
-		//Fade out unnecesary nav items
-		function showHideNavItems() {
-			var $activeSlideNumber = parseInt($activeSlide.text());
-
-			if ($activeSlideNumber == 1) {
-
-				$slideNavNextA.removeAttr('class');
-				$slideNavPrev.animate({ opacity: 0.25 }).find('a').addClass('disabled');
-
-			} else if ($activeSlideNumber == $numberOfSlides) {
-
-				$slideNavPrevA.removeAttr('class');
-				$slideNavNext.animate({ opacity: 0.25 }).find('a').addClass('disabled');
-
-			} else {
-
-				$slideNavNext.add($slideNavPrev).animate({ opacity: 1 });
-				$slideNavNextA.add($slideNavPrevA).removeAttr('class');
-
-			}
+particlesJS("particles", {
+	"particles": {
+	  "number": {
+		"value": 400,
+		"density": {
+		  "enable": true,
+		  "value_area": 800
 		}
-
-		//Next slide
-		$slideNavNext.click(function (e) {
-			e.preventDefault();
-			var index = parseInt($activeSlide.text());
-			index++;
-			if (index <= $numberOfSlides) {
-
-				scrollToSlide(index);
-
-			}
-		});
-
-		//Prev slide
-		$slideNavPrev.click(function (e) {
-			e.preventDefault();
-			var index = parseInt($activeSlide.text());
-			index--;
-			if (index > 0) {
-
-				scrollToSlide(index);
-
-			}
-		});
-
-
-		function scrollToSlide(slideId) {
-
-			// Custom slide content offset
-			var customSlideOffset = $("#slide-" + slideId).attr('data-content-offset');
-
-
-			// Scroll to the top of a container if it doesn't have custom offset defined
-			if (typeof customSlideOffset === 'undefined') {
-
-				htmlbody.animate({ scrollTop: ($("#slide-" + slideId).offset().top) + 'px' }, 'slow');
-
-			} else {
-
-				// Convert percentage 'eg. 25p' into pixels
-				if (customSlideOffset.indexOf('p') != -1) {
-
-					var customSlideOffset = parseInt(customSlideOffset.split('p')[0]);
-					var slideHeight = $slide.height();
-
-					customSlideOffset = Math.ceil((slideHeight / 100) * customSlideOffset);
-
-					//console.log(slideHeight +' '+ customSlideOffset);
-
-					htmlbody.animate({ scrollTop: ($("#slide-" + slideId).offset().top + customSlideOffset) + 'px' }, 'slow');
-
-				} else {
-
-					var customSlideOffset = parseInt(customSlideOffset);
-
-					htmlbody.animate({ scrollTop: ($("#slide-" + slideId).offset().top + customSlideOffset) + 'px' }, 'slow');
-
-				}
-
-			}
+	  },
+	  "color": {
+		"value": "#ffffff"
+	  },
+	  "shape": {
+		"type": "image",
+		"stroke": {
+		  "width": 5,
+		  "color": "#fff"
+		},
+		"polygon": {
+		  "nb_sides": 5
+		},
+		"image": {
+		  "src": "../assets/img/snow.png",
+		  "width": 100,
+		  "height": 100
 		}
-
-
-	}
-
-})(jQuery);
+	  },
+	  "opacity": {
+		"value": 0.7,
+		"random": false,
+		"anim": {
+		  "enable": false,
+		  "speed": .5,
+		  "opacity_min": 0.1,
+		  "sync": false
+		}
+	  },
+	  "size": {
+		"value": 9,
+		"random": true,
+		"anim": {
+		  "enable": false,
+		  "speed": 10,
+		  "size_min": 0.1,
+		  "sync": false
+		}
+	  },
+	  "line_linked": {
+		"enable": false,
+		"distance": 50,
+		"color": "#ffffff",
+		"opacity": 0.6,
+		"width": 1
+	  },
+	  "move": {
+		"enable": true,
+		"speed": 2,
+		"direction": "bottom",
+		"random": true,
+		"straight": false,
+		"out_mode": "out",
+		"bounce": false,
+		"attract": {
+		  "enable": true,
+		  "rotateX": 300,
+		  "rotateY": 1200
+		}
+	  }
+	},
+	"interactivity": {
+	  "detect_on": "none",
+	  "events": {
+		"onhover": {
+		  "enable": false,
+		  "mode":  "bubble"
+		},
+		"onclick": {
+		  "enable": true,
+		  "mode": "repulse"
+		},
+		"resize": true
+	  },
+	  "modes": {
+		"grab": {
+		  "distance": 150,
+		  "line_linked": {
+			"opacity": 1
+		  }
+		},
+		"bubble": {
+		  "distance": 200,
+		  "size": 40,
+		  "duration": 2,
+		  "opacity": 8,
+		  "speed": 3
+		},
+		"repulse": {
+		  "distance": 200,
+		  "duration": 0.2
+		},
+		"push": {
+		  "particles_nb": 4
+		},
+		"remove": {
+		  "particles_nb": 2
+		}
+	  }
+	},
+	"retina_detect": true
+  });

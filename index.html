@@ -13,47 +13,54 @@ title: Jaybee | Portfolio
 
     <link rel="stylesheet" href="./assets/css/styles.css">
     <link rel="icon" href="./assets/img/icon.png">
+    <title>Jaybee | Portfolio</title>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 
 
 
 
 </head>
 
-<body class="">
+<body>
 
 
     <section class="section-one">
         <div class="Intro">
-            <div class="wrapper">
-                <div class="snow snow-layer1"></div>
-                <div class="snow snow-layer1 a"></div>
-                <div class="snow snow-layer2"></div>
-                <div class="snow snow-layer2 a"></div>
-                <div class="snow snow-layer2 b"></div>
-                <div class="snow snow-layer3"></div>
-                <div class="snow snow-layer3 a"></div>
+            <div class="wrapper" id="particles" style="z-index: 10000000000000000000000;">
+                <div id="particles" style="z-index: 100;"> </div>
+                <div class="intro-text">Hello, I am
+                    <span style="color: yellow;">Okoroji Faith</span>
+                </div>
             </div>
-            <div class="intro-text">Hello, I am
-                <span style="color: yellow;">Okoroji Faith</span>
-            </div>
-        </div>
 
 
-        <div class="zoom">
-            <img src="./assets/img/mountain1.png" id="layer1">
-            <img src="./assets/img/mountain2.png" id="layer2">
-            <div id="text">
-                <h2 class="text">And I Am A Web Developer </h2>
-                <div class="button" onclick="scrollDown()">Discover Me</div>
+            <div class="zoom">
+                <img src="./assets/img/mountain1.png" id="layer1">
+                <img src="./assets/img/mountain2.png" id="layer2">
+                <div id="text">
+                    <h2 class="text">And I Am A Web Developer </h2>
+                    <div class="button" onclick="scrollDown()">Discover Me</div>
+                </div>
             </div>
-        </div>
     </section>
 
 
 
-    <section class="header-section section-two" id="section-two">
+    <section class="header-section section-two" id="section-two particles">
+
+
+
 
         <div id="large-header row" class="large-header">
+
+            <div class="wrapper" id="particles">
+                <div class="snow snow-layer1"></div>
+                <div class="snow snow-layer1 a"></div>
+                <div class="snow snow-layer2"></div>
+                <div class="snow snow-layer2 a"></div>
+                <div class="snow snow-layer3"></div>
+                <div class="snow snow-layer3 a"></div>
+            </div>
             <div class="header">
                 <div class="navbar">
                     <a class="navbar-brand">
@@ -69,19 +76,21 @@ title: Jaybee | Portfolio
                     <h1> I am a <br>
                         {<span class="typed" style="color :  black;"></span>}</h1>
 
-                        <div class="see-btn">See My work</div>
+                    <div class="see-btn">See My work</div>
                 </div>
 
                 <div class="subtitle header-text col-6 col-md-12" id="header-text">
-                    <h1 >
+                    <h1>
                         <span class="typed-2" style="color: black;"></span>
                         <br>
                         {<span class="typed-3" style="color: black; font-size: .8rem;
                         margin-bottom: 2rem !important;"></span>}</h1>
-                        <br class="" >
+                    <br class="">
                 </div>
             </div>
         </div>
+
+
 
 
 
@@ -117,7 +126,7 @@ title: Jaybee | Portfolio
             strings: [
                 "Web Developer",
                 "Designer",
-                "Creative Activisit",
+                "Creative Artist",
 
             ],
             startDelay: 100,
@@ -134,7 +143,7 @@ title: Jaybee | Portfolio
 
         var typed2 = new Typed('.typed-3', {
             strings: [
-                "I am a simple but adventurous person, someone who wants more out of life. I love Music, I love nature , I love designing, creativity ,brainstorming , problem solving and most of all i love Programming , I am very passionate about Programming and how I can use it to develop my community, my nation and my continent, how I can use it to communicate with the younger generation And The world.Programming is not just a Job or activity, Programming is a culture, a lifestyle, a way of problem solving.", 
+                "I am a simple but adventurous person, someone who wants more out of life. I love Music, I love nature , I love designing, creativity ,brainstorming , problem solving and most of all i love Programming , I am very passionate about Programming and how I can use it to develop my community, my nation and my continent, how I can use it to communicate with the younger generation And The world.Programming is not just a Job or activity, Programming is a culture, a lifestyle, a way of problem solving.",
 
                 "I create and design web and application interfaces and do my part to make the internet better and more beautiful, I have created and have played a part in creating many websites in the past using languages and frameworks such as Python, Javascript, Ruby, React, React-Native, Jekyll, Jquery , Django, Bootstrap, Materialize, Scss, Html and Css and like  and i dont plan to stop. I also have skills In Backend Development and I plan to keep gaining more experience in the coming years..."
 
