@@ -200,9 +200,14 @@ body {
 
 @media (max-width: 1145px) {
   .zoom #layer1,
-  .zoom #layer2,
-  .zoom::before {
+  .zoom #layer2 {
     display: none;
+  }
+}
+
+@media (max-width: 460px) {
+  .see-btn {
+    margin-top: 2rem;
   }
 }
 
@@ -261,8 +266,8 @@ $s3: "";
 }
 
 .snow-layer1 {
-  width: .7rem;
-  height: .7rem;
+  width: 0.7rem;
+  height: 0.7rem;
   filter: blur(1px);
   background-color: white !important;
   z-index: 10000;
@@ -352,11 +357,9 @@ $s3: "";
   animation: gradient 20s ease infinite;
   box-shadow: 1px 1px 15px 2px grey;
   filter: invert(5%);
-
-  //    display: flex;
-  //    flex-direction: row;
-
-  // }
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 
   .logo {
     height: 4rem;
@@ -366,13 +369,93 @@ $s3: "";
     background-position: center;
   }
 }
+
+.hamburger-icon {
+  height: 3, 2rem;
+  width: 3.2rem;
+  background-image: url(../img/menu.svg);
+  position: relative;
+  z-index: 100;
+  filter: invert(100%);
+  right: 5rem;
+  cursor: pointer;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+.hamburger-icon::after {
+  content: "";
+  position: absolute;
+  height: 3.2rem;
+  width: 3.2rem;
+  cursor: pointer !important;
+  top: 2rem;
+}
+
+.hamburger-icon:hover {
+  cursor: pointer;
+  filter: invert(0%);
+}
+
+.hamburger-icon.active {
+  background-image: url(../img/close.svg);
+  height: 2.8rem;
+  width: 2.8rem;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
 .section-two {
   height: fit-content !important;
 }
 .navbar .navbar-brand {
   left: 10rem !important;
-  color: black;
-  background-color: yellow !important;
+  color: white;
+  display: flex;
+  flex-direction: row;
+}
+
+.side-menu {
+  position: fixed;
+  background: white;
+
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  width: 40vw;
+  right: 0rem;
+  min-width: 25rem;
+  transform: translateX(100vw);
+  border-end-end-radius: 40%;
+  border-top-left-radius: 50% 50%;
+  border-bottom-left-radius: 50% 50%;
+}
+
+.side-menu.active {
+  transform: translateX(0);
+}
+
+.side-menu .options {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  right: 5rem;
+  position: relative;
+  top: 25%;
+
+  a {
+    font-size: 1.5rem;
+    font-family: 'Roboto Mono', sans-serif;
+    color: black;
+  }
+}
+
+.name {
+  display: flex;
+  align-self: center;
+  font-family: "Lobster", cursive;
+  font-size: 2.3rem;
 }
 
 #section-three,
